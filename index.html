@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
 	</head>
 	<body>
 		<div id="page-container">
@@ -12,25 +14,15 @@
 				<div id="profile-summary">
 					<div class="content">
 						<img class='avatar' src='img/alagoon.jpg' />
-						<p>Your Name Here</p>
+						<p class = "fullname">Paul Chatterton</p>
 					</div>
 				</div>
 				<div id="tweet-content">
 
-					<!-- STEP 2: When the user clicks on the textarea, the textarea should double in size and the character count and Tweet buttons should be revealed. -->
-					<!-- HINT: jQuery ".on" eventHandler -->
 					<textarea class="tweet-compose" placeholder="Compose new Tweet..."/></textarea>
 
-					<!-- STEP 1: Initially, the Tweet button and the character count button below should be hidden. -->
-					<!-- HINT: Use CSS -->
 					<div id="tweet-controls">
-
-						<!-- STEP 3: As the user types the character count should decrease. Once it hits 10 character or less the count should turn red -->
-						<!-- HINT: jQuery keypress events (keypress, keydown, keyup, etc) -->
 						<div id="char-count">140</div>
-
-						<!-- STEP 4: If the user puts in more than 140 characters, the tweet button should be disabled (and re-enabled when there are <= 140 chars) -->
-						<!-- HINT: javascript length method -->
 						<button class="button" id="tweet-submit">Tweet</button>
 					</div>
 				</div>
@@ -38,21 +30,19 @@
 			<div id="main">
 				<h2>Tweets</h2>
 				<div id="stream">
-
-					<!-- STEP 5: When the user successfully inputs characters and clicks the “Tweet” button, a new tweet should be created and added to the tweet stream in the main column, using the user’s fake profile image in the top left and username/fullname. -->
-					<!-- HINT: jQuery ".prepend" method -->
 					<div class="tweet">
 						<div class="content">
 							<img class="avatar" src="img/damenleeturks.jpg" />
 							<strong class="fullname">My BFF</strong>
 							<span class="username">@mybff</span>
-
-							<!-- BLACK DIAMOND: Implement the icons for when a tweet is favorited/retweeted in the upper right of the tweet. -->
-							<!-- HINT: Add to what you created in Step 5 -->
+							<div class="favorited-retweet">
+								<ul class="favorited-retweet-list">
+									<li><span class="icon action-retweet"></span></li>
+									<li><span class="icon action-favorite"></span></li>
+								</ul>
+							</div>
 							<p class="tweet-text">Today is an amazing day.</p>
 
-							<!-- STEP 6: The tweet actions below should only show up when you hover over the tweet. Otherwise, they should be hidden. -->
-							<!-- HINT: CSS ":hover" pseudo element -->
 							<div class="tweet-actions">
 								<ul>
 									<li><span class="icon action-reply"></span> Reply</li>
@@ -62,8 +52,6 @@
 								</ul>
 							</div>
 
-							<!-- STEP 7: The Retweets/timestamp/Reply areas below should also be hidden by default. These should only expand if you click on the tweet. Use a jQuery animation to accomplish the reveal, similar to how it’s done on Twitter.com -->
-							<!-- HINT: jQuery ".on" eventHandler -->
 							<div class="stats">
 								<div class="retweets">
 									<p class="num-retweets">30</p>
@@ -178,5 +166,9 @@
 				</div><!-- #stream -->
 			</div><!-- #main -->
 		</div><!-- #page-container -->
+	
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>	
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>

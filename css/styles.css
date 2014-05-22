@@ -146,8 +146,13 @@ body {
 	border-bottom: 1px solid #e8e8e8;
 	min-height: 60px;
 	border-radius: 6px;
+	position: relative;
 }
 
+.tweet:hover .tweet-actions {
+	visibility: visible;
+	opacity: 1;
+}
 	.tweet .avatar {
 		float: left;
 		margin-right: 10px;
@@ -159,6 +164,22 @@ body {
 		font-size: 12px;
 		color: #999;
 	}
+
+	.tweet .favorited-retweet {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+	}
+
+		.favorited-retweet-list {
+			list-style-type: none;
+		}
+
+			.favorited-retweet-list li {
+				display: inline-block;
+				margin-right: 2px;
+			}
+
 	.tweet-text {
 		font-size: 14px;
 		color: #333;
@@ -168,6 +189,10 @@ body {
 
 	.tweet-actions {
 		text-align: right;
+		visibility: hidden;
+		opacity:0;
+  		-webkit-transition: opacity 0.5s linear;
+  		transition:opacity 0.5s linear;
 	}
 		.tweet-actions ul {
 			list-style-type: none;
